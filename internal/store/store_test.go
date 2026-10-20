@@ -53,4 +53,3 @@ func TestLoadBrokenFile(t *testing.T) {
 		t.Error("expected an error for a broken file, got nil")
 	}
 }
-
