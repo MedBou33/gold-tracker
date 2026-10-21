@@ -1,0 +1,6 @@
+.git
+bin/
+state.json
+*.test
+*.out
+.env
