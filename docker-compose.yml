@@ -1,0 +1,14 @@
+services:
+  tracker:
+    build: .
+    image: gold-tracker:dev
+    restart: unless-stopped
+    environment:
+      NTFY_TOPIC: ${NTFY_TOPIC:?set NTFY_TOPIC in .env}
+      TARGET_PRICE: ${TARGET_PRICE:?set TARGET_PRICE in .env}
+      CHECK_INTERVAL: ${CHECK_INTERVAL:-5m}
+    volumes:
+      - gold-data:/data
+
+volumes:
+  gold-data:
